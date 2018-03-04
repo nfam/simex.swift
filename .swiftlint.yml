@@ -1,0 +1,11 @@
+excluded:
+  - dist
+  - Tests
+statement_position:
+  statement_mode: uncuddled_else
+function_body_length: 80
+line_length: 140
+cyclomatic_complexity: 30
+identifier_name:
+  min_length:
+    warning: 2

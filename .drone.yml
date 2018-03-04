@@ -1,0 +1,26 @@
+pipeline:
+  lint:
+    image: norionomura/swiftlint:swift-${swift}
+    commands:
+      - swiftlint
+
+  build:
+    image: swift:${swift}
+    commands:
+      - swift build
+
+  test:
+    image: swift:${swift}
+    commands:
+      - swift test
+
+  test-dist:
+    image: swift:${swift}
+    commands:
+      - mv Sources/Simex _Simex
+      - mv dist Sources/Simex
+      - swift test
+
+matrix:
+  swift:
+    - 4.0
